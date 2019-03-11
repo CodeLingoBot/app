@@ -95,7 +95,7 @@ func extract(expr string) (string, error) {
 	if expr[0] == '{' {
 		closing := strings.Index(expr, "}")
 		if closing == -1 {
-			return "", fmt.Errorf("Missing '}' at end of expression")
+			return "", fmt.Errorf("missing '}' at end of expression")
 		}
 		return expr[0 : closing+1], nil
 	}
@@ -114,7 +114,7 @@ func extract(expr string) (string, error) {
 			}
 		}
 		if indent != 0 {
-			return "", fmt.Errorf("Missing ')' at end of expression")
+			return "", fmt.Errorf("missing ')' at end of expression")
 		}
 		return expr[0 : i+1], nil
 	}
